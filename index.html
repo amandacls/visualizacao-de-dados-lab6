@@ -7,7 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
- <style>
+  <style>
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f4f6f9;
@@ -54,7 +54,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin-top: 30px;
-    } 
+    }
     #back-button {
       display: none;
       margin-top: 20px;
@@ -111,19 +111,12 @@
         </tr>
     </tbody>
   </table>
+
   <div id="header">
     <h2 style="text-align:center;">Projeto de Visualização Interativa de Dados</h2>
     <h4 style="text-align:center;"><u>Grupo C</u>: Amanda Carolina, Denilson Deivid, Larissa Rodrigues, Luiz Augusto, Vitor Holanda &nbsp; &nbsp;</h4>
-    <p style="text-align:center;">&nbsp;</p>
-    <h2 style="text-align:center;"><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;"><strong> Atracações nos portos brasileiros em 2024</strong></span></h3>
-    <p style="text-align:justify; padding: 10px 50px 10px 50px;">Este dashboard interativo apresenta dados de atracações em portos brasileiros organizados por região. Os dados estão organizados hierarquicamente:</p>
-      <ul>
-        <li><strong>História 1:</strong> Representa a quantidade total de atracações por estados portuários do Brasil em um ano específico.</li>
-        <li><strong>História 2:</strong> Ao clicar em uma região no gráfico de pizza, um novo gráfico de calor é exibido, mostrando a quantidade de atracações a cada mês no estado selecionado.</li>
-      </ul>
-      <p style="text-align:justify; padding: 10px 50px 10px 50px;">
-        Para explorar os dados, clique em um estado no gráfico de pizza para visualizar os dados desse estado. Use o botão "Voltar à visão geral" para retornar à visão geral.
-      </p>
+    <h2 style="text-align:center;"><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;"><strong> Atracações nos portos brasileiros em 2024</strong></span></h2>
+    <p style="text-align:justify; padding: 10px 50px 10px 50px;">Este dashboard interativo apresenta dados de atracações em portos brasileiros organizados por região...</p>
   </div>
 
   <div id="container" style="max-width: 100%; height: 470px; padding: 10px 50px 10px 50px;">
@@ -136,15 +129,12 @@
     </div>
   </div>
 
-  <div id="footer" style="height: 2%">
+  <div id="footer" style="height: 2%; margin-top: 150px">
     <p style="text-align:justify; padding: 20px 50px 0px 50px;"><b>Dicas para interagir com a visualização</b>:</p>
     <ul style="padding: 0px 50px 10px 75px;">
       <li>Clique em cada estado para ter mais detalhes sobre o número total de atracações</li>
-      <li>...</li>
-      <li>...</li>
     </ul>
   </div>
-
 
   <script>
     const data = [
@@ -155,9 +145,7 @@
       { name: "Santa Catarina", value: 32, color: "#9467bd" },
       { name: "Rondônia", value: 22, color: "#8c564b" }
     ];
-  
-    const colorMap = Object.fromEntries(data.map(d => [d.name, d.color]));
-  
+
     const heatmapData = {
       "Pará": [["T1", "jan", 16], ["T1", "fev", 9], ["T1", "mar", 9], ["T2", "abr", 9], ["T2", "mai", 13], ["T2", "jun", 11], ["T3", "jul", 11], ["T3", "ago", 8], ["T3", "set", 7], ["T4", "out", 5], ["T4", "nov", 3], ["T4", "dez", 3]],
       "Amazonas": [["T1", "jan", 19], ["T1", "fev", 15], ["T1", "mar", 21], ["T2", "abr", 16], ["T2", "mai", 14], ["T2", "jun", 14], ["T3", "jul", 19], ["T3", "ago", 17], ["T3", "set", 16], ["T4", "out", 13], ["T4", "nov", 22], ["T4", "dez", 13]],
@@ -167,11 +155,19 @@
       "Amapá": [["T1", "jan", 4], ["T1", "fev", null], ["T1", "mar", null], ["T2", "abr", 4], ["T2", "mai", 8], ["T2", "jun", 4], ["T3", "jul", 4], ["T3", "ago", 4], ["T3", "set", 8], ["T4", "out", 2], ["T4", "nov", null], ["T4", "dez", null]]
     };
 
-  
     const chart = echarts.init(document.getElementById("chart"));
     const backButton = document.getElementById("back-button");
     const chartTitle = document.getElementById("chart-title");
-  
+
+    function voltarInicio() {
+      // Limpar o gráfico de calor
+      chart.clear(); 
+
+      // Exibir o gráfico de pizza novamente
+      backButton.style.display = 'none';
+      showPieChart();
+    }
+
     function showPieChart() {
       chart.setOption({
         title: {
@@ -186,32 +182,32 @@
           left: 'left'
         },
         series: [{
-        name: "Estados",
-        type: "pie",
-        radius: ["40%", "70%"],
-        avoidLabelOverlap: false,
-        itemStyle: {
-          borderRadius: 10,
-          borderColor: "#fff",
-          borderWidth: 2
-        },
-        data: data.map(d => ({
-          name: d.name,
-          value: d.value,
-          itemStyle: { color: d.color }
-        }))
-      }]
+          name: "Estados",
+          type: "pie",
+          radius: ["40%", "70%"],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            borderRadius: 10,
+            borderColor: "#fff",
+            borderWidth: 2
+          },
+          data: data.map(d => ({
+            name: d.name,
+            value: d.value,
+            itemStyle: { color: d.color }
+          }))
+        }]
       });
-  
+
       backButton.style.display = "none";
       chartTitle.innerText = "Distribuição por Estado";
     }
-  
+
     function showHeatmap(state) {
       const dataForState = heatmapData[state];
       const months = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
       const seriesData = dataForState.map(([quarter, month, value]) => [months.indexOf(month), ["T1", "T2", "T3", "T4"].indexOf(quarter), value ?? '-']);
-  
+
       chart.setOption({
         title: {
           text: `Atracações Mensais - ${state}`,
@@ -261,22 +257,23 @@
           }
         }]
       });
-  
+
       backButton.style.display = "inline-block";
       chartTitle.innerText = `Atracações por mês em ${state}`;
     }
-  
+
     chart.on("click", function (params) {
       if (params.componentType === "series" && params.seriesType === "pie") {
         showHeatmap(params.name);
       }
     });
-  
-    backButton.addEventListener("click", showPieChart);
-  
+
+    backButton.addEventListener("click", voltarInicio);
+
+    // Exibir o gráfico de pizza inicialmente
     showPieChart();
   </script>
-  
 
 </body>
 </html>
+
