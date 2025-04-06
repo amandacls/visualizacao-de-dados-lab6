@@ -91,26 +91,44 @@
       color: #7f8c8d;
       line-height: 1.6;
     }
+    .header-info {
+      padding: 20px 50px;
+      background-color: #a4dceb;
+    }
+
   </style>
 </head>
 <body>
 
-  <table style="width: 100%; margin: 0px; padding: 0px; border-width:0px;">
-    <tbody>
-        <tr height="10px">
-            <td>UNIVERSIDADE FEDERAL DE CAMPINA GRANDE - UFCG</td>
-            <td style="text-align: right;">Disciplina: Visualiza&ccedil;&atilde;o de Dados (TECC)</td>
-        </tr>
-        <tr>
-            <td>CENTRO DE ENGENHARIA EL&Eacute;TRICA E INFORM&Aacute;TICA - CEEI</td>
-            <td style="text-align: right;">Professor: Maxwell Guimar&atilde;es de Oliveira</td>
-        </tr>
-        <tr>
-            <td>UNIDADE ACAD&Ecirc;MICA DE SISTEMAS E COMPUTA&Ccedil;&Atilde;O - UASC</td>
-            <td style="text-align: right;">Período: 2024.2</td>
-        </tr>
-    </tbody>
-  </table>
+  <div class="header-info">
+    <table style="width: 100%; border: 0;">
+      <tr>
+        <td style="text-align: left; vertical-align: top;">
+          <table style="border: 0;">
+            <tr>
+              <td style="width: 70px;">
+                <img src="brasao-ufcg.png" alt="Brasão UFCG" style="height: 60px;">
+              </td>
+              <td>
+                <div style="line-height: 1.4;">
+                  <div><strong>UNIVERSIDADE FEDERAL DE CAMPINA GRANDE - UFCG</strong></div>
+                  <div>CENTRO DE ENGENHARIA ELÉTRICA E INFORMÁTICA - CEEI</div>
+                  <div>UNIDADE ACADÊMICA DE SISTEMAS E COMPUTAÇÃO - UASC</div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <td style="text-align: right; vertical-align: top;">
+          <div>Professor: Maxwell Guimar&atilde;es de Oliveira</div>
+          <div>Período: 2024.2</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  
 
   <div id="header">
     <h2 style="text-align:center;">Projeto de Visualização Interativa de Dados</h2>
@@ -128,6 +146,15 @@
       <div id="chart"></div>
     </div>
   </div>
+
+  <div id="footer" style="height: 2%; margin-top: 150px">
+    <p style="text-align:justify; padding: 20px 50px 0px 50px;"><b>Dicas para interagir com a visualização</b>:</p>
+    <ul style="padding: 0px 50px 10px 75px;">
+      <li>Clique em cada estado para ter mais detalhes sobre o número total de atracações</li>
+    </ul>
+  </div>
+
+  
 
   <script>
   const data = [
