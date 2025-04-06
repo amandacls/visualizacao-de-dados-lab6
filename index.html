@@ -367,10 +367,17 @@ const heatmapData = {
         tooltip: {
           trigger: 'item'
         },
+  
         legend: {
-          orient: 'vertical',
-          left: 'left'
-        },
+          bottom: 0, 
+          type: 'scroll', 
+          left: 'center', 
+          textStyle: {
+          fontSize: 12,
+          color: '#333'
+        }
+      },
+
         series: [{
           name: "Estados",
           type: "pie",
@@ -392,6 +399,8 @@ const heatmapData = {
       backButton.style.display = "none";
       chartTitle.innerText = "Distribuição por Estado";
     }
+
+    
 
     function showHeatmap(state) {
       const dataForState = heatmapData[state];
