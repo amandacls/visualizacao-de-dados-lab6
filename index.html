@@ -137,23 +137,193 @@
   </div>
 
   <script>
-    const data = [
-      { name: "Amazonas", value: 199, color: "#1f77b4" },
-      { name: "Pará", value: 104, color: "#ff7f0e" },
-      { name: "Rio Grande do Sul", value: 78, color: "#2ca02c" },
-      { name: "Amapá", value: 38, color: "#d62728" },
-      { name: "Santa Catarina", value: 32, color: "#9467bd" },
-      { name: "Rondônia", value: 22, color: "#8c564b" }
-    ];
+  const data = [
+    { name: "Acre", value: 16, color: "#6e5fd6" },
+    { name: "Alagoas", value: 383, color: "#e74266" },
+    { name: "Amapá", value: 617, color: "#7eb4fe" },
+    { name: "Amazonas", value: 12330, color: "#0b8b73" },
+    { name: "Bahia", value: 2076, color: "#a848d1" },
+    { name: "Ceará", value: 1648, color: "#3e7f42" },
+    { name: "Espírito Santo", value: 2802, color: "#9c8a41" },
+    { name: "Goiás", value: 726, color: "#1f99ed" },
+    { name: "Maranhão", value: 1990, color: "#e83209" },
+    { name: "Mato Grosso do Sul", value: 2020, color: "#cd3597" },
+    { name: "Paraná", value: 2740, color: "#cbe514" },
+    { name: "Paraíba", value: 105, color: "#577296" },
+    { name: "Pará", value: 27792, color: "#58e500" },
+    { name: "Pernambuco", value: 2220, color: "#90c6ca" },
+    { name: "Rio Grande do Norte", value: 4397, color: "#611edc" },
+    { name: "Rio Grande do Sul", value: 6837, color: "#b45d1a" },
+    { name: "Rio de Janeiro", value: 21808, color: "#4691b1" },
+    { name: "Rondônia", value: 5395, color: "#809108" },
+    { name: "Santa Catarina", value: 2520, color: "#b4ee9e" },
+    { name: "Sergipe", value: 471, color: "#e66a14" },
+    { name: "São Paulo", value: 7828, color: "#0a43d9" },
+  ];
 
-    const heatmapData = {
-      "Pará": [["T1", "jan", 16], ["T1", "fev", 9], ["T1", "mar", 9], ["T2", "abr", 9], ["T2", "mai", 13], ["T2", "jun", 11], ["T3", "jul", 11], ["T3", "ago", 8], ["T3", "set", 7], ["T4", "out", 5], ["T4", "nov", 3], ["T4", "dez", 3]],
-      "Amazonas": [["T1", "jan", 19], ["T1", "fev", 15], ["T1", "mar", 21], ["T2", "abr", 16], ["T2", "mai", 14], ["T2", "jun", 14], ["T3", "jul", 19], ["T3", "ago", 17], ["T3", "set", 16], ["T4", "out", 13], ["T4", "nov", 22], ["T4", "dez", 13]],
-      "Rio Grande do Sul": [["T1", "jan", 7], ["T1", "fev", 5], ["T1", "mar", 12], ["T2", "abr", 10], ["T2", "mai", null], ["T2", "jun", 5], ["T3", "jul", 6], ["T3", "ago", 7], ["T3", "set", 5], ["T4", "out", 7], ["T4", "nov", 7], ["T4", "dez", 7]],
-      "Rondônia": [["T1", "jan", 3], ["T1", "fev", 3], ["T1", "mar", 5], ["T2", "abr", 2], ["T2", "mai", 2], ["T2", "jun", 1], ["T3", "jul", null], ["T3", "ago", 2], ["T3", "set", 1], ["T4", "out", null], ["T4", "nov", 1], ["T4", "dez", 2]],
-      "Santa Catarina": [["T1", "jan", 4], ["T1", "fev", 3], ["T1", "mar", 2], ["T2", "abr", 3], ["T2", "mai", 3], ["T2", "jun", 3], ["T3", "jul", 3], ["T3", "ago", 2], ["T3", "set", 2], ["T4", "out", 2], ["T4", "nov", 2], ["T4", "dez", 3]],
-      "Amapá": [["T1", "jan", 4], ["T1", "fev", null], ["T1", "mar", null], ["T2", "abr", 4], ["T2", "mai", 8], ["T2", "jun", 4], ["T3", "jul", 4], ["T3", "ago", 4], ["T3", "set", 8], ["T4", "out", 2], ["T4", "nov", null], ["T4", "dez", null]]
-    };
+
+
+
+const heatmapData = {
+		  Acre: [
+    ['T1', 'jan', 2], ['T1', 'feb', 3], ['T1', 'mar', 2],
+    ['T2', 'apr', 4], ['T2', 'may', 3], ['T2', 'jun', null],
+    ['T3', 'jul', null], ['T3', 'aug', null], ['T3', 'sep', null],
+    ['T4', 'oct', null], ['T4', 'nov', 1], ['T4', 'dec', 1]
+  ],
+  Alagoas: [
+    ['T1', 'jan', 40], ['T1', 'feb', 33], ['T1', 'mar', 42],
+    ['T2', 'apr', 28], ['T2', 'may', 34], ['T2', 'jun', 23],
+    ['T3', 'jul', 26], ['T3', 'aug', 26], ['T3', 'sep', 26],
+    ['T4', 'oct', 31], ['T4', 'nov', 37], ['T4', 'dec', 37]
+  ],
+  Amapá: [
+    ['T1', 'jan', 71], ['T1', 'feb', 30], ['T1', 'mar', 59],
+    ['T2', 'apr', 60], ['T2', 'may', 72], ['T2', 'jun', 55],
+    ['T3', 'jul', 58], ['T3', 'aug', 59], ['T3', 'sep', 54],
+    ['T4', 'oct', 50], ['T4', 'nov', 34], ['T4', 'dec', 15]
+  ],
+  Amazonas: [
+    ['T1', 'jan', 1044], ['T1', 'feb', 1076], ['T1', 'mar', 1132],
+    ['T2', 'apr', 1100], ['T2', 'may', 1034], ['T2', 'jun', 1019],
+    ['T3', 'jul', 1186], ['T3', 'aug', 1016], ['T3', 'sep', 838],
+    ['T4', 'oct', 888], ['T4', 'nov', 985], ['T4', 'dec', 1012]
+  ],
+  Bahia: [
+    ['T1', 'jan', 199], ['T1', 'feb', 174], ['T1', 'mar', 203],
+    ['T2', 'apr', 170], ['T2', 'may', 176], ['T2', 'jun', 163],
+    ['T3', 'jul', 180], ['T3', 'aug', 169], ['T3', 'sep', 175],
+    ['T4', 'oct', 163], ['T4', 'nov', 143], ['T4', 'dec', 161]
+  ],
+  Ceará: [
+    ['T1', 'jan', 129], ['T1', 'feb', 119], ['T1', 'mar', 155],
+    ['T2', 'apr', 153], ['T2', 'may', 145], ['T2', 'jun', 129],
+    ['T3', 'jul', 132], ['T3', 'aug', 142], ['T3', 'sep', 131],
+    ['T4', 'oct', 145], ['T4', 'nov', 137], ['T4', 'dec', 131]
+  ],
+  "Espírito Santo": [
+    ['T1', 'jan', 228], ['T1', 'feb', 208], ['T1', 'mar', 225],
+    ['T2', 'apr', 218], ['T2', 'may', 240], ['T2', 'jun', 258],
+    ['T3', 'jul', 230], ['T3', 'aug', 272], ['T3', 'sep', 238],
+    ['T4', 'oct', 235], ['T4', 'nov', 218], ['T4', 'dec', 232]
+  ],
+  Goiás: [
+    ['T1', 'jan', null], ['T1', 'feb', 56], ['T1', 'mar', 76],
+    ['T2', 'apr', 68], ['T2', 'may', 68], ['T2', 'jun', 56],
+    ['T3', 'jul', 80], ['T3', 'aug', 76], ['T3', 'sep', 72],
+    ['T4', 'oct', 64], ['T4', 'nov', 88], ['T4', 'dec', 22]
+  ],
+  Maranhão: [
+    ['T1', 'jan', 25], ['T1', 'feb', 34], ['T1', 'mar', 31],
+    ['T2', 'apr', 24], ['T2', 'may', 27], ['T2', 'jun', 28],
+    ['T3', 'jul', 21], ['T3', 'aug', 32], ['T3', 'sep', 25],
+    ['T4', 'oct', 26], ['T4', 'nov', 30], ['T4', 'dec', 32]
+  ],
+  "Mato Grosso": [
+    ['T1', 'jan', 77], ['T1', 'feb', 57], ['T1', 'mar', 82],
+    ['T2', 'apr', 61], ['T2', 'may', 62], ['T2', 'jun', 58],
+    ['T3', 'jul', 66], ['T3', 'aug', 57], ['T3', 'sep', 58],
+    ['T4', 'oct', 62], ['T4', 'nov', 71], ['T4', 'dec', 73]
+  ],
+  "Mato Grosso do Sul": [
+    ['T1', 'jan', 73], ['T1', 'feb', 76], ['T1', 'mar', 75],
+    ['T2', 'apr', 63], ['T2', 'may', 70], ['T2', 'jun', 69],
+    ['T3', 'jul', 58], ['T3', 'aug', 61], ['T3', 'sep', 60],
+    ['T4', 'oct', 62], ['T4', 'nov', 71], ['T4', 'dec', 66]
+  ],
+  "Minas Gerais": [
+    ['T1', 'jan', 124], ['T1', 'feb', 130], ['T1', 'mar', 131],
+    ['T2', 'apr', 133], ['T2', 'may', 124], ['T2', 'jun', 130],
+    ['T3', 'jul', 132], ['T3', 'aug', 139], ['T3', 'sep', 136],
+    ['T4', 'oct', 136], ['T4', 'nov', 128], ['T4', 'dec', 138]
+  ],
+  Pará: [
+    ['T1', 'jan', 281], ['T1', 'feb', 283], ['T1', 'mar', 295],
+    ['T2', 'apr', 263], ['T2', 'may', 284], ['T2', 'jun', 273],
+    ['T3', 'jul', 273], ['T3', 'aug', 283], ['T3', 'sep', 289],
+    ['T4', 'oct', 278], ['T4', 'nov', 262], ['T4', 'dec', 281]
+  ],
+  Paraíba: [
+    ['T1', 'jan', 74], ['T1', 'feb', 67], ['T1', 'mar', 85],
+    ['T2', 'apr', 68], ['T2', 'may', 69], ['T2', 'jun', 72],
+    ['T3', 'jul', 69], ['T3', 'aug', 69], ['T3', 'sep', 68],
+    ['T4', 'oct', 76], ['T4', 'nov', 66], ['T4', 'dec', 67]
+  ],
+  Paraná: [
+    ['T1', 'jan', 99], ['T1', 'feb', 101], ['T1', 'mar', 110],
+    ['T2', 'apr', 109], ['T2', 'may', 112], ['T2', 'jun', 113],
+    ['T3', 'jul', 113], ['T3', 'aug', 117], ['T3', 'sep', 112],
+    ['T4', 'oct', 109], ['T4', 'nov', 108], ['T4', 'dec', 107]
+  ],
+  Pernambuco: [
+    ['T1', 'jan', 94], ['T1', 'feb', 83], ['T1', 'mar', 89],
+    ['T2', 'apr', 91], ['T2', 'may', 92], ['T2', 'jun', 97],
+    ['T3', 'jul', 85], ['T3', 'aug', 85], ['T3', 'sep', 90],
+    ['T4', 'oct', 88], ['T4', 'nov', 95], ['T4', 'dec', 94]
+  ],
+  Piauí: [
+    ['T1', 'jan', 16], ['T1', 'feb', 14], ['T1', 'mar', 18],
+    ['T2', 'apr', 16], ['T2', 'may', 14], ['T2', 'jun', 19],
+    ['T3', 'jul', 18], ['T3', 'aug', 16], ['T3', 'sep', 17],
+    ['T4', 'oct', 19], ['T4', 'nov', 17], ['T4', 'dec', 19]
+  ],
+  "Rio de Janeiro": [
+    ['T1', 'jan', 1282], ['T1', 'feb', 1266], ['T1', 'mar', 1288],
+    ['T2', 'apr', 1296], ['T2', 'may', 1311], ['T2', 'jun', 1321],
+    ['T3', 'jul', 1305], ['T3', 'aug', 1332], ['T3', 'sep', 1315],
+    ['T4', 'oct', 1304], ['T4', 'nov', 1278], ['T4', 'dec', 1295]
+  ],
+  "Rio Grande do Norte": [
+    ['T1', 'jan', 44], ['T1', 'feb', 46], ['T1', 'mar', 49],
+    ['T2', 'apr', 48], ['T2', 'may', 45], ['T2', 'jun', 46],
+    ['T3', 'jul', 49], ['T3', 'aug', 47], ['T3', 'sep', 45],
+    ['T4', 'oct', 48], ['T4', 'nov', 47], ['T4', 'dec', 46]
+  ],
+  "Rio Grande do Sul": [
+    ['T1', 'jan', 150], ['T1', 'feb', 152], ['T1', 'mar', 154],
+    ['T2', 'apr', 149], ['T2', 'may', 151], ['T2', 'jun', 152],
+    ['T3', 'jul', 153], ['T3', 'aug', 150], ['T3', 'sep', 151],
+    ['T4', 'oct', 152], ['T4', 'nov', 151], ['T4', 'dec', 150]
+  ],
+  Rondônia: [
+    ['T1', 'jan', 60], ['T1', 'feb', 58], ['T1', 'mar', 61],
+    ['T2', 'apr', 62], ['T2', 'may', 60], ['T2', 'jun', 59],
+    ['T3', 'jul', 60], ['T3', 'aug', 59], ['T3', 'sep', 58],
+    ['T4', 'oct', 61], ['T4', 'nov', 60], ['T4', 'dec', 59]
+  ],
+  Roraima: [
+    ['T1', 'jan', 8], ['T1', 'feb', 9], ['T1', 'mar', 10],
+    ['T2', 'apr', 9], ['T2', 'may', 10], ['T2', 'jun', 11],
+    ['T3', 'jul', 10], ['T3', 'aug', 10], ['T3', 'sep', 11],
+    ['T4', 'oct', 10], ['T4', 'nov', 9], ['T4', 'dec', 10]
+  ],
+  "Santa Catarina": [
+    ['T1', 'jan', 104], ['T1', 'feb', 108], ['T1', 'mar', 105],
+    ['T2', 'apr', 110], ['T2', 'may', 111], ['T2', 'jun', 109],
+    ['T3', 'jul', 110], ['T3', 'aug', 109], ['T3', 'sep', 107],
+    ['T4', 'oct', 108], ['T4', 'nov', 107], ['T4', 'dec', 106]
+  ],
+  "São Paulo": [
+    ['T1', 'jan', 1850], ['T1', 'feb', 1875], ['T1', 'mar', 1890],
+    ['T2', 'apr', 1900], ['T2', 'may', 1920], ['T2', 'jun', 1930],
+    ['T3', 'jul', 1945], ['T3', 'aug', 1950], ['T3', 'sep', 1935],
+    ['T4', 'oct', 1920], ['T4', 'nov', 1905], ['T4', 'dec', 1890]
+  ],
+  Sergipe: [
+    ['T1', 'jan', 14], ['T1', 'feb', 13], ['T1', 'mar', 15],
+    ['T2', 'apr', 14], ['T2', 'may', 13], ['T2', 'jun', 12],
+    ['T3', 'jul', 13], ['T3', 'aug', 14], ['T3', 'sep', 13],
+    ['T4', 'oct', 14], ['T4', 'nov', 13], ['T4', 'dec', 12]
+  ],
+  Tocantins: [
+    ['T1', 'jan', 23], ['T1', 'feb', 22], ['T1', 'mar', 24],
+    ['T2', 'apr', 22], ['T2', 'may', 21], ['T2', 'jun', 23],
+    ['T3', 'jul', 22], ['T3', 'aug', 24], ['T3', 'sep', 23],
+    ['T4', 'oct', 22], ['T4', 'nov', 21], ['T4', 'dec', 20]
+  ]
+};
+
+
 
     const chart = echarts.init(document.getElementById("chart"));
     const backButton = document.getElementById("back-button");
