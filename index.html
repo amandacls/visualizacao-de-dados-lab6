@@ -128,7 +128,6 @@
     </table>
   </div>
   
-  
 
   <div id="header">
     <h2 style="text-align:center;">Projeto de Visualização Interativa de Dados</h2>
@@ -378,7 +377,6 @@ const heatmapData = {
       },
 
         series: [{
-          name: "Estados",
           type: "pie",
           radius: ["40%", "60%"],
           avoidLabelOverlap: false,
@@ -394,12 +392,11 @@ const heatmapData = {
           }))
         }]
       });
+      
 
       backButton.style.display = "none";
       chartTitle.innerText = "Distribuição por Estado";
     }
-
-    
 
     function showHeatmap(state) {
       const dataForState = heatmapData[state];
@@ -441,7 +438,6 @@ const heatmapData = {
           bottom: '5%'
         },
         series: [{
-          name: 'Atracações',
           type: 'heatmap',
           data: seriesData,
           label: {
