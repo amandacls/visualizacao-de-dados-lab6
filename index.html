@@ -239,13 +239,16 @@
           }
         },
         visualMap: {
-          min: 0,
-          max: 25,
-          calculable: true,
-          orient: 'horizontal',
-          left: 'center',
-          bottom: '5%'
-        },
+        min: 0,
+        max: 25,
+        calculable: true,
+        orient: 'horizontal',
+        left: 'center',
+        bottom: '5%',
+        inRange: {
+          color: [colorMap[state]]  // Usa a cor do estado atual
+        }
+      },
         series: [{
           name: 'Atracações',
           type: 'heatmap',
